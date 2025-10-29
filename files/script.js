@@ -1,5 +1,4 @@
 //Scroll up button
-
 const scrollUpBtn = document.getElementById("scrollUpBtn");
 
 
