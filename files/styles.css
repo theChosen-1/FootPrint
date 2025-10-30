@@ -34,6 +34,17 @@ body {
     backdrop-filter: saturate(1.6) blur(8px);
     border-bottom: 2px solid var(--line);
     z-index: 50;
+    height: 70px;            
+    overflow: visible;       
+}
+
+.logo img {
+  height: auto;              
+  left: -18px;               
+  width: 135px;               
+  object-fit: contain;      
+  position: relative;              
+  pointer-events: none;      
 }
 
 .headerLogo {
