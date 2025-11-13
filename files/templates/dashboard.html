@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboardStyles.css') }}">
+
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/fplogo.png') }}" alt="Logo">
+        </div>
+
+        <div class="headerItems">
+            <button id="themeToggle" type="button">Theme Toggle</button>
+            <button id="logOutBtn" type="button">Log Out</button>
+        </div>
+    </div>
+
+    <!-- personalized hello message -->
+    <div class="HelloMessage">
+        Hello, {{ username }}!
+    </div>
+    
+
+    <div class="dashboardBody">
+        <div class="decorativeDot"></div>
+
+        <div class="leftColumn">
+            <div class="enterPhoneNumer"></div>
+            <div class="enterEmailAddress"></div>
+            <div class="foundData"></div>
+        </div>
+
+        <div class="rightColumn">
+            <div class="pieChart"></div>
+            <div class="pieChartDescription"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Copyright @ footPrint 2025
+    </div>
+    <script src="{{ url_for('static', filename='dashboardScripts.js') }}" defer></script>
+</body>
+</html>
