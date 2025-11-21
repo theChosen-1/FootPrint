@@ -17,6 +17,16 @@
   padding: 0;
 }
 
+/* Hide scrollbar but keep functionality */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+ 
+html::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
 body {
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   background: var(--bg);
@@ -24,13 +34,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* Hide scrollbar but keep functionality */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-body::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari, Opera */
 }
 
 .header {
