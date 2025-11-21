@@ -24,6 +24,13 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* Hide scrollbar but keep functionality */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
 }
 
 .header {
