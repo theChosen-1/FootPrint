@@ -21,21 +21,24 @@ body {
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    background: rgba(247, 247, 248, 0.8); /* This is --bg at 80% opacity */
-    backdrop-filter: saturate(1.6) blur(8px);
-    border-bottom: 2px solid var(--line);
-    z-index: 50;
-    height: 70px;            
-    overflow: visible;       
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  background: rgba(247, 247, 248, 0.8); /* This is --bg at 80% opacity */
+  backdrop-filter: saturate(1.6) blur(8px);
+  border-bottom: 2px solid var(--line);
+  z-index: 50;
+  height: 70px;            
+  overflow: visible;       
 }
 
 .logo img {
@@ -48,44 +51,44 @@ body {
 }
 
 .headerLogo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 800;
-    color: var(--text);
-    font-size: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: var(--text);
+  font-size: 32px;
 }
 
 .headerItems {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 #themeToggle {
-    padding: 8px 16px;
-    border-radius: 999px;
-    border: 1px solid var(--line);
-    background: #fff;
-    color: var(--text);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 #themeToggle:hover {
-    background: var(--bg);
+  background: var(--bg);
 }
 
 #logOutBtn {
-    padding: 12px 18px;
-    border-radius: 999px;
-    border: 1px solid var(--line);
-    background: var(--text);
-    color: var(--cta-text);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--text);
+  color: var(--cta-text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 #logOutBtn:hover {
@@ -101,5 +104,334 @@ body {
   color: var(--muted);
   font-weight: 600;
   padding: 30px;
-  margin-top: 30px;
+  margin-top: auto;
+}
+
+.HelloMessage {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--lightgray);
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  z-index: 10;
+}
+
+.dashboardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.dashboardBody {
+  width: 100%;
+  max-width: 1400px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  position: relative;
+  border: 2px solid var(--orange);
+  border-radius: 16px;
+  background: var(--bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.leftColumn,
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 48px;
+  border: 1px solid var(--line);
+}
+
+.inputCard,
+.resultsCard {
+  background: transparent;
+  padding: 0;
+}
+
+.statsCard,
+.infoCard {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.inputCard h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.inputGroup {
+  margin-bottom: 20px;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(244, 122, 20, 0.1);
+}
+
+.inputGroup input::placeholder {
+  color: var(--muted);
+}
+
+.checkButton {
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: none;
+  background: var(--orange);
+  color: var(--cta-text);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.checkButton:hover {
+  background: #e06d0f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 122, 20, 0.3);
+}
+
+.checkButton:active {
+  transform: translateY(0);
+}
+
+.loadingIndicator {
+  text-align: center;
+  padding: 24px;
+  margin-top: 24px;
+  background: var(--bg);
+  border-radius: 8px;
+}
+
+.spinner {
+  border: 3px solid var(--line);
+  border-top: 3px solid var(--orange);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loadingIndicator p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.resultsCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.resultsCard h3,
+.statsCard h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.rightColumn {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultsPlaceholder {
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+  padding: 40px;
+}
+
+.breachItem {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-left: 4px solid var(--orange);
+}
+
+.breachItem:last-child {
+  margin-bottom: 0;
+}
+
+.breachName {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.breachDate {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.breachDescription {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.breachData {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.noBreachFound {
+  text-align: center;
+  padding: 32px;
+  background: linear-gradient(135deg, #10b98126, #059669);
+  border-radius: 8px;
+  color: #065f46;
+}
+
+.noBreachFound h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #047857;
+}
+
+.errorMessage {
+  background: #fee;
+  border-left: 4px solid #ef4444;
+  border-radius: 8px;
+  padding: 16px;
+  color: #991b1b;
+  font-size: 14px;
+}
+
+.statsPlaceholder {
+  text-align: center;
+  color: var(--muted);
+  padding: 32px;
+  font-size: 14px;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.statValue.danger {
+  color: #ef4444;
+}
+
+.statValue.success {
+  color: #10b981;
+}
+
+.infoCard {
+  background: linear-gradient(135deg, #fff5eb, #ffedd5);
+  border: 1px solid #fed7aa;
+}
+
+.infoCard h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #9a3412;
+  margin-bottom: 12px;
+}
+
+.infoCard p {
+  font-size: 14px;
+  color: #7c2d12;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .dashboardBody {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .dashboardContainer {
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .HelloMessage {
+    font-size: 24px;
+    font-weight: 700;
+    top: 16px;
+    left: 20px;
+  }
+
+  .inputCard,
+  .resultsCard {
+    padding: 24px;
+  }
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='dashboardStyles.css') }}">
+    <script src="{{ url_for('static', filename='dashboardScripts.js') }}" defer></script>
 
 </head>
 <body>
@@ -19,30 +20,63 @@
         </div>
     </div>
 
-    <!-- personalized hello message -->
-    <div class="HelloMessage">
-        Hello, {{ username }}!
-    </div>
-    
-
-    <div class="dashboardBody">
-        <div class="decorativeDot"></div>
-
-        <div class="leftColumn">
-            <div class="enterPhoneNumer"></div>
-            <div class="enterEmailAddress"></div>
-            <div class="foundData"></div>
+    <div class="dashboardContainer">
+        <!-- personalized hello message -->
+        <div class="HelloMessage">
+            Hello, {{ username }}!
         </div>
 
-        <div class="rightColumn">
-            <div class="pieChart"></div>
-            <div class="pieChartDescription"></div>
+        <div class="dashboardBody">
+            <div class="leftColumn">
+                <div class="inputCard">
+                    <h2>Check Your Digital Footprint</h2>
+                    <p class="subtitle">Enter your information to check if it has been compromised in a data breach</p>
+
+                    <form id="breachCheckForm">
+                        <div class="inputGroup">
+                            <label for="userEmail">Email Address</label>
+                            <input type="email" id="userEmail" placeholder="Enter your email address" required>
+                        </div>
+
+                        <div class="inputGroup">
+                            <label for="additionalEmail">Additional Email Address</label>
+                            <input type="email" id="additionalEmail" placeholder="Enter additional email address">
+                        </div>
+
+                        <div class="inputGroup">
+                            <label for="websiteURL">Website URL</label>
+                            <input type="url" id="websiteURL" placeholder="Enter website URL">
+                        </div>
+
+                        <div class="inputGroup">
+                            <label for="userPassword">Password</label>
+                            <input type="password" id="userPassword" placeholder="Enter password">
+                        </div>
+
+                        <button type="submit" class="checkButton">Check for Breaches</button>
+                    </form>
+
+                    <div id="loadingIndicator" class="loadingIndicator" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Checking for breaches...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rightColumn">
+                <div id="resultsPlaceholder" class="resultsPlaceholder">
+                    <p>Results will appear here after checking for breaches</p>
+                </div>
+                <div id="resultsCard" class="resultsCard" style="display: none;">
+                    <h3>Breach Results</h3>
+                    <div id="breachResults"></div>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="footer">
         Copyright @ footPrint 2025
     </div>
-    <script src="{{ url_for('static', filename='dashboardScripts.js') }}" defer></script>
 </body>
 </html>
