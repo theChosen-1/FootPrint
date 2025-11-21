@@ -141,44 +141,45 @@ body {
 }
 
 .topContent {
-    position: relative;
-    background-image: url("/static/img/tbg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-bottom: none;
+  position: relative;
+  background-image: url("/static/img/tbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: none;
 }
+
 .topContent::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.75); 
-    backdrop-filter: blur(2px);            
-    z-index: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75); 
+  backdrop-filter: blur(2px);            
+  z-index: 0;
 }
 
 .topContent::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 120px; 
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0) 0%,   
-        rgba(247, 247, 248, 1) 100% 
-    );
-    z-index: 2;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; 
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,   
+    rgba(247, 247, 248, 1) 100% 
+  );
+  z-index: 2;
+  pointer-events: none;
 }
 
 .topContent > * {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .topSection {
@@ -320,30 +321,30 @@ body {
 }
 
 .box1, .box2, .box3, .box4 {
-    display: flex;
-    flex-direction: column;
-    border-radius: 14px;
-    border: 2px dashed var(--lightgray);
-    background: var(--card);
-    padding: 12px 24px ;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  border: 2px dashed var(--lightgray);
+  background: var(--card);
+  padding: 12px 24px ;
+  gap: 8px;
 
-    max-width: 450px;
-    align-self: stretch;
+  max-width: 450px;
+  align-self: stretch;
 }
 
 @media (max-width: 900px) {
-    .box1, .box2, .box3, .box4 {
-        padding: 18px 50px 18px 18px; 
-    }
+  .box1, .box2, .box3, .box4 {
+    padding: 18px 50px 18px 18px; 
+  }
 }
 
 @media (max-width: 800px) {
-    .box1, .box2, .box3, .box4 {
-        padding: 18px;      
-        width: fit-content;        
-        box-sizing: border-box; 
-    }
+  .box1, .box2, .box3, .box4 {
+    padding: 18px;      
+    width: fit-content;        
+    box-sizing: border-box; 
+  }
 }
 
 .stepNum {
@@ -571,8 +572,8 @@ body.dark .topContent {
 }
 
 body.dark .topContent::before {
-    background: rgba(0, 0, 0, 0.45); 
-    backdrop-filter: blur(8px);            
+  background: rgba(0, 0, 0, 0.45); 
+  backdrop-filter: blur(8px);            
 }
 
 body.dark .topContent::after {
@@ -592,30 +593,30 @@ body.dark .signUpPopUp {
 }
 
 body.dark .featureTitle{
-    color:white;
+  color:white;
 }
 body.dark .featureText{
-    color:rgb(206, 206, 206);
+  color:rgb(206, 206, 206);
 }
 body.dark .featureBoxes > div,
 
 body.dark .stats > div,
 body.dark .howItWorks {
-    background-color: #121212;
-    border: 2px solid #ffd27f; 
+  background-color: #121212;
+  border: 2px solid #ffd27f; 
 }
 
 body.dark .howItWorks .arrow {
-    background: none;
-    border: none;
-    padding: 0;
-    color: #ffd27f;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #ffd27f;
 }
 
 body.dark .howItWorks > div {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    border: 1px solid #444;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #444;
 }
 
 

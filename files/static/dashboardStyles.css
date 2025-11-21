@@ -421,6 +421,144 @@ body {
   line-height: 1.6;
 }
 
+/* Dark mode */
+body.dark {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+body.dark .header {
+  background: rgba(22, 22, 22, 0.8);
+  border-bottom: 2px solid #333;
+}
+
+body.dark #themeToggle {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border: 1px solid #ffd27f;
+}
+
+body.dark #themeToggle:hover {
+  background-color: #ffd27f;
+  color: #000;
+}
+
+body.dark #logOutBtn {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border: 1px solid #ffd27f;
+}
+
+body.dark #logOutBtn:hover {
+  background-color: #ffd27f;
+  color: #000;
+}
+
+body.dark .HelloMessage {
+  color: #aaaaaa;
+}
+
+body.dark .dashboardBody {
+  background: #0a0a0a;
+  border-color: #ffd27f;
+}
+
+body.dark .leftColumn,
+body.dark .rightColumn {
+  background: #121212;
+  border: 1px solid #444;
+}
+
+body.dark .inputCard h2,
+body.dark .resultsCard h3 {
+  color: #ffffff;
+}
+
+body.dark .subtitle,
+body.dark .inputGroup label {
+  color: #e0e0e0;
+}
+
+body.dark .inputGroup input {
+  background: #1a1a1a;
+  color: #ffffff;
+  border-color: #444;
+}
+
+body.dark .inputGroup input:focus {
+  border-color: #ffd27f;
+  box-shadow: 0 0 0 3px rgba(255, 210, 127, 0.1);
+}
+
+body.dark .inputGroup input::placeholder {
+  color: #666;
+}
+
+body.dark .checkButton {
+  background: #ffd27f;
+  color: #000;
+}
+
+body.dark .checkButton:hover {
+  background: #ffbc47;
+}
+
+body.dark .loadingIndicator {
+  background: #1a1a1a;
+}
+
+body.dark .loadingIndicator p {
+  color: #aaaaaa;
+}
+
+body.dark .spinner {
+  border: 3px solid #333;
+  border-top: 3px solid #ffd27f;
+}
+
+body.dark .resultsPlaceholder {
+  color: #666;
+}
+
+body.dark .breachItem {
+  background: #1a1a1a;
+  border-left-color: #ffd27f;
+}
+
+body.dark .breachName {
+  color: #ffffff;
+}
+
+body.dark .breachDate,
+body.dark .breachData {
+  color: #aaaaaa;
+}
+
+body.dark .breachDescription {
+  color: #e0e0e0;
+}
+
+body.dark .noBreachFound {
+  background: linear-gradient(135deg, #1a3a1a, #0d5f0d);
+  color: #4ade80;
+}
+
+body.dark .noBreachFound h4 {
+  color: #6ee7b7;
+}
+
+body.dark .errorMessage {
+  background: #2a1a1a;
+  border-left-color: #ef4444;
+  color: #fca5a5;
+}
+
+body.dark .footer {
+  background-color: #161616;
+  border-top: 1px solid #333;
+  color: #aaaaaa;
+}
+
 @media (max-width: 768px) {
   .dashboardBody {
     grid-template-columns: 1fr;
