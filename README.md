@@ -99,7 +99,9 @@ footprint/
 │   │   ├── script.js               # Landing page JavaScript
 │   │   ├── dashboardScripts.js     # Dashboard JavaScript
 │   │   └── img/
-│   │       └── fplogo.png          # Application logo
+│   │       ├── fplogo.png          # Application logo
+│   │       ├── tbg.png             # Landing page background
+│   │       └── tbbg.png            # Dark theme background
 │   └── venv/                       # Python virtual environment
 ├── .gitignore
 └── README.md
