@@ -1,93 +1,287 @@
 # FootPrint
 
+<p align="center">
+  <img src="files/static/img/fplogo.png" alt="FootPrint Logo" width="200">
+</p>
 
+<h3 align="center">Track - Detect - Protect</h3>
 
-## Getting started
+<p align="center">
+  A data breach detection and monitoring application that helps users identify if their personal information has been compromised.
+</p>
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+---
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Table of Contents
 
-## Add your files
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Security](#security)
+- [API Reference](#api-reference)
+- [Contributing](#contributing)
+- [License](#license)
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+---
+
+## About
+
+FootPrint is a web application designed to help users discover whether their email addresses have been exposed in known data breaches. By leveraging the HaveIBeenPwned API, FootPrint provides real-time breach detection with detailed information about compromised data types, breach dates, and affected services.
+
+The application features a modern, responsive interface with dark/light theme support, secure user authentication with brute force protection, and a personalized dashboard for monitoring your digital footprint.
+
+---
+
+## Features
+
+### Landing Page
+- Hero section with service statistics (Files Monitored, Detection Time, Integrations)
+- Key features showcase with visual cards
+- Step-by-step "How It Works" guide
+- Dark/Light theme toggle
+- Modal-based authentication (Login/Signup)
+- Scroll-to-top button
+
+### Authentication System
+- User registration with email validation
+- Secure login with session management
+- Rate limiting to prevent brute force attacks
+- 5-minute account lockout after 3 failed attempts
+- Password hashing using PBKDF2:SHA256
+
+### Dashboard
+- Personalized greeting for logged-in users
+- Email breach checking via HaveIBeenPwned API
+- Detailed breach results including:
+  - Breach name and date
+  - Description of the incident
+  - Types of compromised data
+- Loading indicators and error handling
+- Dark/Light theme toggle
+- Responsive two-column layout
+
+---
+
+## Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| **Backend** | Python 3.10+, Flask |
+| **Database** | SQLite, SQLAlchemy ORM |
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
+| **Templating** | Jinja2 |
+| **External API** | HaveIBeenPwned API v3 |
+| **Security** | Werkzeug (password hashing) |
+
+---
+
+## Project Structure
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.cci.drexel.edu/cid/2526/fw1023/c4/footprint.git
-git branch -M main
-git push -uf origin main
+footprint/
+├── files/
+│   ├── app.py                      # Main Flask application
+│   ├── security.py                 # Login security & rate limiting
+│   ├── instance/
+│   │   ├── data.db                 # User database (SQLite)
+│   │   └── ratings.db              # Ratings database
+│   ├── templates/
+│   │   ├── index.html              # Landing page
+│   │   ├── dashboard.html          # User dashboard
+│   │   ├── login.html              # Login modal
+│   │   └── signup.html             # Signup modal
+│   ├── static/
+│   │   ├── styles.css              # Landing page styles
+│   │   ├── dashboardStyles.css     # Dashboard styles
+│   │   ├── script.js               # Landing page JavaScript
+│   │   ├── dashboardScripts.js     # Dashboard JavaScript
+│   │   └── img/
+│   │       └── fplogo.png          # Application logo
+│   └── venv/                       # Python virtual environment
+├── .gitignore
+└── README.md
 ```
 
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.cci.drexel.edu/cid/2526/fw1023/c4/footprint/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+---
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+
+### Prerequisites
+
+- Python 3.10 or higher
+- pip (Python package manager)
+- Git
+
+### Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/footprint.git
+   cd footprint
+   ```
+
+2. **Navigate to the files directory**
+   ```bash
+   cd files
+   ```
+
+3. **Create and activate a virtual environment**
+
+   **macOS/Linux:**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+   **Windows:**
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate
+   ```
+
+4. **Install dependencies**
+   ```bash
+   pip install flask flask-sqlalchemy werkzeug
+   ```
+
+5. **Configure the secret key (Important for Production)**
+
+   Open `app.py` and replace the placeholder secret key:
+   ```python
+   # Change this line:
+   app.secret_key = 'your_secret_key_here'
+
+   # To use an environment variable:
+   import os
+   app.secret_key = os.environ.get('SECRET_KEY', 'dev-key-change-in-production')
+   ```
+
+6. **Run the application**
+   ```bash
+   python app.py
+   ```
+
+7. **Access the application**
+
+   Open your browser and navigate to: `http://127.0.0.1:5000`
+
+---
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+### Getting Started
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+1. **Create an Account**
+   - Click the "Sign Up" button on the landing page
+   - Enter your username, email, and password
+   - Submit the registration form
+
+2. **Log In**
+   - Click the "Log In" button
+   - Enter your credentials
+   - You will be redirected to your dashboard
+
+3. **Check for Data Breaches**
+   - On the dashboard, enter your email address in the form
+   - Click "Check for Breaches"
+   - View the results showing any known breaches
+
+4. **Theme Toggle**
+   - Use the "Theme Toggle" button to switch between light and dark modes
+   - Your preference is applied across the application
+
+---
+
+## Screenshots
+
+> Add your screenshots to the `files/static/img/` directory and update this section.
+
+| Landing Page | Dashboard |
+|--------------|-----------|
+| *Screenshot coming soon* | *Screenshot coming soon* |
+
+---
+
+## Security
+
+### Authentication Security
+
+- **Password Hashing**: All passwords are hashed using PBKDF2:SHA256 algorithm via Werkzeug
+- **Session Management**: Flask sessions are used for maintaining user state
+- **Rate Limiting**: Login attempts are limited to prevent brute force attacks
+- **Account Lockout**: After 3 failed login attempts, the account is locked for 5 minutes
+
+### Security Recommendations for Production
+
+1. **Environment Variables**: Move the secret key to an environment variable
+   ```bash
+   export SECRET_KEY='your-secure-random-key'
+   ```
+
+2. **HTTPS**: Deploy behind a reverse proxy with SSL/TLS encryption
+
+3. **Database**: Consider migrating to PostgreSQL or MySQL for production
+
+4. **API Key**: The HaveIBeenPwned API may require an API key for certain requests. Consider implementing a backend proxy to handle API calls securely.
+
+### Known Considerations
+
+- The HaveIBeenPwned API is currently called from the client-side, which may encounter CORS restrictions. For production, implement a backend proxy endpoint to handle these requests.
+
+---
+
+## API Reference
+
+### HaveIBeenPwned Integration
+
+FootPrint uses the [HaveIBeenPwned API v3](https://haveibeenpwned.com/API/v3) to check for data breaches.
+
+**Endpoint Used:**
+```
+GET https://haveibeenpwned.com/api/v3/breachedaccount/{email}
+```
+
+**Response Codes:**
+| Code | Description |
+|------|-------------|
+| 200 | Breaches found, returns JSON array |
+| 404 | No breaches found for the account |
+| 429 | Rate limit exceeded |
+
+**Note:** Some API features may require a paid API key. Visit [HaveIBeenPwned](https://haveibeenpwned.com/API/Key) for more information.
+
+---
 
 ## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+We welcome contributions! Here's how you can help:
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+### Areas for Contribution
+
+- Backend API proxy for HaveIBeenPwned requests
+- Additional breach monitoring features
+- UI/UX improvements
+- Test coverage
+- Documentation improvements
+
+---
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This project is developed for educational purposes at Drexel University.
+
+---
+
+<p align="center">
+  Made with care by the FootPrint Team
+</p>
