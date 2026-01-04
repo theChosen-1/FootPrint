@@ -1,8 +1,7 @@
-# FootPrint
-
 <p align="center">
   <img src="files/static/img/fplogo.png" alt="FootPrint Logo" width="200">
-</p>
+</p> 
+
 
 <h3 align="center">Track - Detect - Protect</h3>
 
@@ -278,7 +277,7 @@ We welcome contributions! Here's how you can help:
 
 ## License
 
-This project is developed for educational purposes at Drexel University.
+This project uses the MIT License.
 
 ---
 
