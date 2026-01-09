@@ -29,7 +29,7 @@
 
 ## About
 
-FootPrint is a web application designed to help users discover whether their email addresses have been exposed in known data breaches. By leveraging the HaveIBeenPwned API, FootPrint provides real-time breach detection with detailed information about compromised data types, breach dates, and affected services.
+FootPrint is a web application designed to help users discover whether their email addresses have been exposed in known data breaches. By leveraging the HaveIBeenPwned API and Ghostery TrackerDB, FootPrint provides real-time breach detection with detailed information about compromised data types, breach dates, and affected services.
 
 The application features a modern, responsive interface with dark/light theme support, secure user authentication with brute force protection, and a personalized dashboard for monitoring your digital footprint.
 
@@ -73,7 +73,7 @@ The application features a modern, responsive interface with dark/light theme su
 | **Database** | SQLite, SQLAlchemy ORM |
 | **Frontend** | HTML5, CSS3, Vanilla JavaScript |
 | **Templating** | Jinja2 |
-| **External API** | HaveIBeenPwned API v3 |
+| **External API** | HaveIBeenPwned API v3, Ghostery TrackerDB |
 | **Security** | Werkzeug (password hashing) |
 
 ---
