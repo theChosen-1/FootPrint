@@ -121,7 +121,7 @@ footprint/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/footprint.git
+   git clone https://github.com/inshaal81/footprint.git
    cd footprint
    ```
 
@@ -199,11 +199,7 @@ footprint/
 
 ## Screenshots
 
-> Add your screenshots to the `files/static/img/` directory and update this section.
-
-| Landing Page | Dashboard |
-|--------------|-----------|
-| *Screenshot coming soon* | *Screenshot coming soon* |
+*Screenshot coming soon* 
 
 ---
 
